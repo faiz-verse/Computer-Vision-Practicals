@@ -80,7 +80,7 @@ plt.show()
 # 2D Transformation using image
 
 import cv2
-image  = cv2.imread('F://CV//8bit.png')
+image  = cv2.imread('../Images/8bit.png')
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
 # Translation

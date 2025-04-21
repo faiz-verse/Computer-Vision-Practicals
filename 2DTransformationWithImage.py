@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load image
-image = cv2.imread('F://CV//8bit.png')  # Replace with your image path
+image = cv2.imread('./Images/8bit.png')  # Replace with your image path
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # Convert BGR to RGB for matplotlib
 
 # 1. Translation (Move image)

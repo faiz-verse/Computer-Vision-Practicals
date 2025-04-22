@@ -6,7 +6,7 @@ reference_img = cv2.imread('./Images/people_walk.PNG', cv2.IMREAD_GRAYSCALE)
 
 # Check if reference image loaded properly
 if reference_img is None:
-    print("❌ Faile  d to load reference image.")
+    print("❌ Failed to load reference image.")
     exit()
 
 # Initialize SIFT detector

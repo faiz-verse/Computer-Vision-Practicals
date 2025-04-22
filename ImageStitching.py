@@ -36,8 +36,12 @@ else:
     kp2, des2 = sift.detectAndCompute(gray2, None)
 
     # Draw keypoints on the first image
-    img_kp = cv2.drawKeypoints(gray, kp1, None, flags=cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
-    show_resized("Key points in image", img_kp)  # Show image with keypoints
+    img_kp1 = cv2.drawKeypoints(gray, kp1, None, flags=cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
+    show_resized("Key points in image 1", img_kp1)  # Show image with keypoints
+
+    # Draw keypoints on the first image
+    img_kp2 = cv2.drawKeypoints(gray2, kp2, None, flags=cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
+    show_resized("Key points in image 2", img_kp2)  # Show image with keypoints
 
     # FLANN-based matcher parameters
     index_params = dict(algorithm=0, trees=5)  # KD-Tree algorithm
@@ -58,6 +62,8 @@ else:
     match_img = cv2.drawMatches(image, kp1, image2, kp2, good_matches, None,
                                 flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
     show_resized("Match image", match_img)  # Show the matched keypoints
+
+    print(f"Number of good matches: {len(good_matches)}")
 
     # If enough good matches are found, compute homography
     if len(good_matches) > 10:

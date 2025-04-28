@@ -66,7 +66,7 @@ else:
     print(f"Number of good matches: {len(good_matches)}")
 
     # If enough good matches are found, compute homography
-    if len(good_matches) > 10:
+    if len(good_matches) > 7:
         src_pts = np.float32([kp1[m.queryIdx].pt for m in good_matches]).reshape(-1, 1, 2)
         dst_pts = np.float32([kp2[m.trainIdx].pt for m in good_matches]).reshape(-1, 1, 2)
 
